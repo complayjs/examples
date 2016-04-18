@@ -1,0 +1,3 @@
+[submodule "src/conduitjs"]
+	path = src/conduitjs
+	url = git@github.com:HenriPodolski/conduitjs.git
