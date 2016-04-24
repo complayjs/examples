@@ -81,7 +81,11 @@
 
 			// observe true options means application watches dom changes
 			// and initializes components that are already started
-			window.app = new Application({observe: true});
+			window.app = new Application({
+				observe: true,
+				AppComponent: Conduit.ApplicationDomComponent
+			});
+
 			app.start({module: MessageComponent});
 			app.start({module: ButtonComponent});
 		}).call(this);

@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "grunt",
     "postinstall": "cd src/conduitjs && npm install"
   },
   "author": "",
@@ -18,10 +19,9 @@
     "grunt": "^0.4.5",
     "grunt-browser-sync": "^2.2.0",
     "grunt-browserify": "^4.0.1",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sync": "^0.5.2"
   },
-  "dependencies": {
-    
-  }
+  "dependencies": {}
 }
