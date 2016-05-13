@@ -28,7 +28,7 @@ module.exports = function (grunt) {
 		sync: {
 			main: {
 				files: [
-					{cwd: 'src/complay/dist', src: ['conduit.es5.js'], dest: '_output/basic-es5-component/js/'},
+					{cwd: 'src/complay/dist', src: ['complay.es5.min.js'], dest: '_output/basic-es5-component/js/'},
 					{cwd: 'src/examples/', src: ['**/*.html'], dest: '_output/'},
 					{cwd: 'src/examples/', src: ['**/*.css'], dest: '_output/css'}
 				],
