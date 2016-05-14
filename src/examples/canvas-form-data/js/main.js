@@ -3,7 +3,7 @@ import ApplicationDomComponent from '../../../complay/js/lib/application-dom-com
 // services
 import Votes from './services/votes';
 // modules
-
+import VoteFormVotesMediator from './modules/vote-form-votes-mediator'
 // components
 import BarChart from './components/bar-chart';
 import VoteForm from './components/vote-form';
@@ -37,6 +37,14 @@ app.immediate(() => {
 		options: {
 			appName: 'voteForm',
 			autostart: true
+		}
+	});
+
+	app.start({
+		module: VoteFormVotesMediator,
+		options: {
+			voteForm: app.voteForm,
+			votes: app.votes
 		}
 	});
 }).onWindowLoaded(() => {
