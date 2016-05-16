@@ -2,8 +2,67 @@
 <html>
 	<head>
 		<title>Component dealing with canvas and forms using services for data operations</title>
+		<link href="../css/canvas-form-data/style.css" rel="stylesheet" />
 	</head>
 	<body>
+		<div class="r-main--default">
+			<h1 class="c-headline1--default">Poll: Which programming language do you prefer for web development?</h1>
+			<canvas class="c-stage--default" data-js-module="bar-chart"></canvas>
+			<form class="c-form--default" data-js-module="vote-form">
+				<div class="form__group">
+					<label class="form__label--default" for="javascript">JavaScript</label><br/>
+					<input class="form__numeric-input--default" data-js-item="javascript-input" type="number" id="javascript" name="javascript" readonly value="0" />
+				</div>
+				<div class="form__group">
+					<label class="form__label--default" for="php">PHP</label><br/>
+					<input class="form__numeric-input--default" data-js-item="php-input" type="number" id="php" name="php" readonly value="0" />
+				</div>
+				<div class="form__group">
+					<label class="form__label--default" for="java">Java</label><br/>
+					<input class="form__numeric-input--default" data-js-item="java-input" type="number" id="java" name="java" readonly value="0" />
+				</div>
+				<div class="form__group">
+					<label class="form__label--default" for="ruby">Ruby</label><br/>
+					<input class="form__numeric-input--default" data-js-item="ruby-input" type="number" id="ruby" name="ruby" readonly value="0" />
+				</div>
+				<div class="form__group">
+					<label class="form__label--default" for="python">Python</label><br/>
+					<input class="form__numeric-input--default" data-js-item="python-input" type="number" id="python" name="python" readonly value="0" />
+				</div>
+				<div class="form__group">
+					<label class="form__label--default" for="other">Other</label><br/>
+					<input class="form__numeric-input--default" data-js-item="other-input" type="number" id="other" name="other" readonly value="0" />
+				</div>
+				<div class="form__group">
+					<input class="form__radio-input--default" type="radio" id="javascript-radio" name="language" value="javascript" />
+					<label class="form__label--default" for="javascript-radio">JS</label>
+					<input class="form__radio-input--default" type="radio" id="php-radio" name="language" value="php" />
+					<label class="form__label--default" for="php-radio">PHP</label>
+					<input class="form__radio-input--default" type="radio" id="java-radio" name="language" value="java" />
+					<label class="form__label--default" for="java-radio">Java</label>
+					<input class="form__radio-input--default" type="radio" id="ruby-radio" name="language" value="ruby" />
+					<label class="form__label--default" for="ruby-radio">Ruby</label>
+					<input class="form__radio-input--default" type="radio" id="python-radio" name="language" value="python" />
+					<label class="form__label--default" for="python-radio">Python</label>
+					<input class="form__radio-input--default" type="radio" id="other-radio" name="language" value="other" />
+					<label class="form__label--default" for="other-radio">Other</label>
+				</div>
+				<div class="form__group">
+					<input class="form__button--default" type="reset" value="RESET" />
+					<input class="form__button--default" data-js-item="vote-button" type="button" value="VOTE" />
+				</div>
+			</form>
+		</div>
+		<script>
+			var votes = [
+				{name: 'javascript', title: 'JavaScript', count: 22},
+				{name: 'php', title: 'PHP',count: 8},
+				{name: 'java', title: 'Java',count: 11},
+				{name: 'ruby', title: 'Ruby',count: 4},
+				{name: 'python', title: 'Python',count: 6},
+				{name: 'other', title: 'Other',count: 2}
+			]
+		</script>
 		<script src="js/app.js"></script>
 	</body>
 </html>

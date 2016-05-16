@@ -1,3 +1,3 @@
-[submodule "src/conduitjs"]
-	path = src/conduitjs
-	url = git@github.com:HenriPodolski/conduitjs.git
+[submodule "src/complay"]
+	path = src/complay
+	url = ../../HenriPodolski/complay.git

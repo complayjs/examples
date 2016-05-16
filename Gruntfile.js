@@ -28,7 +28,7 @@ module.exports = function (grunt) {
 		sync: {
 			main: {
 				files: [
-					{cwd: 'src/conduitjs/dist', src: ['conduit.es5.js'], dest: '_output/basic-es5-component/js/'},
+					{cwd: 'src/complay/dist', src: ['complay.es5.min.js'], dest: '_output/basic-es5-component/js/'},
 					{cwd: 'src/examples/', src: ['**/*.html'], dest: '_output/'},
 					{cwd: 'src/examples/', src: ['**/*.css'], dest: '_output/css'}
 				],
@@ -61,7 +61,13 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['src/examples/**/*.js', 'src/conduitjs/js/**/*.js'],
+				files: [
+					'src/examples/**/*.js',
+					'src/complay/helpers/**/*.js',
+					'src/complay/extensions/**/*.js',
+					'src/complay/lib/**/*.js',
+					'src/complay/default-config.js'
+				],
 				tasks: ['browserify:examples'],
 				options: {
 					spawn: false

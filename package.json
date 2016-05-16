@@ -1,12 +1,13 @@
 {
-  "name": "conduitjs-examples",
-  "version": "0.0.1",
+  "name": "complayjs-examples",
+  "version": "0.0.2",
   "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "cd src/conduitjs && npm install"
+    "start": "grunt",
+    "postinstall": "cd src/complay && npm install"
   },
   "author": "",
   "license": "MIT",
@@ -18,10 +19,9 @@
     "grunt": "^0.4.5",
     "grunt-browser-sync": "^2.2.0",
     "grunt-browserify": "^4.0.1",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sync": "^0.5.2"
   },
-  "dependencies": {
-    
-  }
+  "dependencies": {}
 }
