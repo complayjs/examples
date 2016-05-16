@@ -61,7 +61,13 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['src/examples/**/*.js', 'src/complay/js/**/*.js'],
+				files: [
+					'src/examples/**/*.js',
+					'src/complay/helpers/**/*.js',
+					'src/complay/extensions/**/*.js',
+					'src/complay/lib/**/*.js',
+					'src/complay/default-config.js'
+				],
 				tasks: ['browserify:examples'],
 				options: {
 					spawn: false

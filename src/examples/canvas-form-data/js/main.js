@@ -1,5 +1,5 @@
-import {ApplicationFacade} from '../../../complay/js/complay';
-import ApplicationDomComponent from '../../../complay/js/lib/application-dom-component';
+import {ApplicationFacade} from '../../../complay/complay';
+import ApplicationDomComponent from '../../../complay/lib/application-dom-component';
 // services
 import Votes from './services/votes';
 // modules

@@ -1,4 +1,4 @@
-import {Service} from '../../../../complay/js/complay';
+import {Service} from '../../../../complay/complay';
 
 export default class Votes extends Service {
     
