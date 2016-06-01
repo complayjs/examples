@@ -1,5 +1,5 @@
-import {Module} from '../../../../complay/complay';
-import TwoWayDataBind from '../../../../complay/extensions/data/two-way-data-bind';
+import {Module} from 'complay';
+import TwoWayDataBind from 'complay/dist/extensions/data/two-way-data-bind';
 
 export default class VoteFormVotesMediator extends Module {
     initialize(options) {

@@ -1,4 +1,4 @@
-import {Service} from '../../../../complay/complay';
+import {Service} from 'complay';
 
 export default class Votes extends Service {
     

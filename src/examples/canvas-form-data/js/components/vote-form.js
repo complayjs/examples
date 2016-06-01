@@ -1,6 +1,6 @@
-import {Component} from '../../../../complay/complay';
-import mix from '../../../../complay/helpers/object/mix'
-import ItemSelectorToMembers from '../../../../complay/extensions/components/item-selector-to-members';
+import {Component} from 'complay';
+import mix from 'complay/dist/helpers/object/mix'
+import ItemSelectorToMembers from 'complay/dist/extensions/component/item-selector-to-members';
 
 export default class VoteForm extends mix(Component).with(ItemSelectorToMembers) {
     initialize() {

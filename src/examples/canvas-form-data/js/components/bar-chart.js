@@ -1,4 +1,4 @@
-import {Component} from '../../../../complay/complay';
+import {Component} from 'complay';
 
 export default class BarChart extends Component {
     initialize() {
