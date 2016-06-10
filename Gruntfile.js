@@ -20,15 +20,15 @@ module.exports = function (grunt) {
 					]
 			]},
 			examples: {
-				files: { 
-					'./_output/canvas-form-data/js/app.js': ['./src/examples/canvas-form-data/js/main.js']
+				files: {
+					'./_output/canvas-form-data/js/main.js': ['./src/examples/canvas-form-data/js/main.js'],
+					'./_output/basic-es5-component/js/main.js': ['./src/examples/basic-es5-component/js/main.js'],
 				}
 			}
 		},
 		sync: {
 			main: {
 				files: [
-					{cwd: 'src/complay/dist', src: ['complay.es5.min.js'], dest: '_output/basic-es5-component/js/'},
 					{cwd: 'src/examples/', src: ['**/*.html'], dest: '_output/'},
 					{cwd: 'src/examples/', src: ['**/*.css'], dest: '_output/css'}
 				],
@@ -63,10 +63,10 @@ module.exports = function (grunt) {
 			scripts: {
 				files: [
 					'src/examples/**/*.js',
-					'src/complay/helpers/**/*.js',
-					'src/complay/extensions/**/*.js',
-					'src/complay/lib/**/*.js',
-					'src/complay/default-config.js'
+					'node_modules/complay/helpers/**/*.js',
+					'node_modules/complay/extensions/**/*.js',
+					'node_modules/complay/lib/**/*.js',
+					'node_modules/complay/default-config.js'
 				],
 				tasks: ['browserify:examples'],
 				options: {

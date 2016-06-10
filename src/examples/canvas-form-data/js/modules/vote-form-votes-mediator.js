@@ -1,11 +1,12 @@
-import {Module} from '../../../../complay/complay';
-import TwoWayDataBind from '../../../../complay/extensions/data/two-way-data-bind';
+import {Module} from 'complay';
+import TwoWayDataBind from 'complay/extensions/data/two-way-data-bind';
 
 export default class VoteFormVotesMediator extends Module {
     initialize(options) {
 
-        this.voteForm = options.voteForm;
         this.votes = options.votes;
+        this.voteForm = options.voteForm;
+        this.barChart = options.barChart;
 
         this.twoWayDataBind = new TwoWayDataBind();
 
@@ -17,21 +18,22 @@ export default class VoteFormVotesMediator extends Module {
     }
 
     onVote(data) {
-        let model = this.votes.data.where({name: data.selected})
+        let model = this.votes.data.where({name: data.selected});
 
         if (model.length) {
-            model[0].count++;
+            model[0].data.count++;
         }
     }
 
     dataBind() {
 
-        this.votes.toArray().forEach((model) => {
-            let domItem = this.voteForm.items[`${model.name}Input`];
+        this.votes.models.forEach((model, key) => {
+            let domItem = this.voteForm.items[`${model.data.name}Input`];
+
             if (domItem) {
                 this.twoWayDataBind.sync({
-                    sourceObj: model,
-                    sourceKey: 'count',
+                    sourceObj: model._storage,
+                    sourceKey: '__count',
                     bindObj: domItem,
                     bindKey: 'value'
                 });

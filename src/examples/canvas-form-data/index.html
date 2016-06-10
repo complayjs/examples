@@ -7,8 +7,10 @@
 	<body>
 		<div class="r-main--default">
 			<h1 class="c-headline1--default">Poll: Which programming language do you prefer for web development?</h1>
-			<canvas class="c-stage--default" data-js-module="bar-chart"></canvas>
-			<form class="c-form--default" data-js-module="vote-form">
+			<div class="c-stage--default">
+				<canvas class="stage__display" data-js-component="bar-chart"></canvas>
+			</div>
+			<form class="c-form--default" data-js-component="vote-form">
 				<div class="form__group">
 					<label class="form__label--default" for="javascript">JavaScript</label><br/>
 					<input class="form__numeric-input--default" data-js-item="javascript-input" type="number" id="javascript" name="javascript" readonly value="0" />
@@ -55,14 +57,14 @@
 		</div>
 		<script>
 			var votes = [
-				{name: 'javascript', title: 'JavaScript', count: 22},
-				{name: 'php', title: 'PHP',count: 8},
-				{name: 'java', title: 'Java',count: 11},
-				{name: 'ruby', title: 'Ruby',count: 4},
-				{name: 'python', title: 'Python',count: 6},
-				{name: 'other', title: 'Other',count: 2}
+				{name: 'javascript', title: 'JavaScript', count: 1},
+				{name: 'php', title: 'PHP',count: 0},
+				{name: 'java', title: 'Java',count: 0},
+				{name: 'ruby', title: 'Ruby',count: 0},
+				{name: 'python', title: 'Python',count: 0},
+				{name: 'other', title: 'Other',count: 0}
 			]
 		</script>
-		<script src="js/app.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

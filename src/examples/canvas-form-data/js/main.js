@@ -1,5 +1,6 @@
-import {ApplicationFacade} from '../../../complay/complay';
-import ApplicationDomComponent from '../../../complay/lib/application-dom-component';
+import ApplicationFacade from 'complay/lib/application-facade';
+import ApplicationDomComponent from 'complay/dist/lib/application-dom-component';
+
 // services
 import Votes from './services/votes';
 // modules
@@ -17,7 +18,7 @@ app.immediate(() => {
 	console.log('immediate');
 
 	app.start({
-		module: Votes,
+		service: Votes,
 		options: {
 			appName: 'votes',
 			data: window.votes
@@ -27,24 +28,29 @@ app.immediate(() => {
 	console.log('onDomReady');
 
 	app.start({
-		module: BarChart,
-		options: {
-			autostart: true
-		}
-	});
-	app.start({
-		module: VoteForm,
+		component: VoteForm,
 		options: {
 			appName: 'voteForm',
 			autostart: true
 		}
 	});
+	
+	app.start({
+		component: BarChart,
+		options: {
+			appName: 'barChart',
+			service: app.votes
+		}
+	});
+
 
 	app.start({
 		module: VoteFormVotesMediator,
 		options: {
+			votes: app.votes,
+			voteViewStorages: app.voteViewStorages,
 			voteForm: app.voteForm,
-			votes: app.votes
+			barChart: app.barChart
 		}
 	});
 }).onWindowLoaded(() => {

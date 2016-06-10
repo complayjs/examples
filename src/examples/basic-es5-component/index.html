@@ -4,8 +4,8 @@
 		<title>Basic complay component - closed cycle ☺</title>
 	</head>
 	<body>
-		<button data-js-module="button-component" data-js-options="{'string': 'string', 'number': 1, 'boolean': true, 'array': ['1','2','3'], 'object': {'key': 'value'}}">Say hello to complay</button>
-		<script src="js/complay.es5.min.js"></script>
+		<button data-js-component="button-component" data-js-options="{'string': 'string', 'number': 1, 'boolean': true, 'array': ['1','2','3'], 'object': {'key': 'value'}}">Say hello to complay</button>
+		<script src="js/main.js"></script>
 		<script>
 		(function() {
 			
@@ -28,9 +28,8 @@
 
 				onButtonClick: function(evt) {
 					console.log(this + '.onButtonClick()', evt, this.options);
-
 					var button = document.createElement('button');
-					button.setAttribute('data-js-module', 'button-component');
+					button.setAttribute('data-js-component', 'button-component');
 					button.setAttribute('data-js-options', '{"string": "string", "number": 1, "boolean": true, "array": ["1","2","3"], "object": {"key": "value"}}');
 					button.innerHTML = 'Say hello to complay';
 
@@ -66,7 +65,7 @@
 				onClick: function() {
 					console.log(this + '.onClick()', this.options);
 					var div = document.createElement('div');
-					div.dataset.jsModule = 'message-component';
+					div.dataset.jsComponent = 'message-component';
 					div.dataset.jsOptions = "{'msg': 'Hi, from complay.'}";
 
 					document.body.appendChild(div);
