@@ -13,25 +13,19 @@ export default class Votes extends Service {
     bindCustomEvents() {
         // console.log(`${this}.bindCustomEvents()`, this.models);
         this.models.forEach(model => {
-            model.on('change', this.onModelChange.bind(this));
+            model.on('change:count', this.onModelCountChange.bind(this, model));
         });
     }
 
-    onModelChange(key, val, oldVal) {
-        console.log(`${this}.onModelChange()`);
-        switch(key) {
-            case('count'): {
-                this.setPercentage();
-                break;
-            }
-        }
+    onModelCountChange(data) {
+        // console.log(`${this}.onModelCountChange()`, data.val, data.oldVal);
+        this.setPercentage();
     }
 
     getCountSum() {
         let sum = 0;
 
         this.toArray().forEach(model => {
-
             let count = model.data.count;
             sum += count;
         });
@@ -44,7 +38,8 @@ export default class Votes extends Service {
         let sum = this.getCountSum();
 
         this.toArray().forEach(model => {
-            model.data.percent = sum && (model.data.count / sum * 100);
+            // console.log(sum, model.data.count, Math.floor(model.data.count / sum * 100));
+            model.data.percent = sum && Math.floor(model.data.count / sum * 100) || 0;
         });
     }
 }

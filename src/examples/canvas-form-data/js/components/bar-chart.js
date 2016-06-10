@@ -6,7 +6,7 @@ import Bar from './bar';
 
 export default class BarChart extends mix(Component).with(AnimationLoop) {
     initialize() {
-        console.log(`${this}.initialize()`, this.app, this.el.parentElement);
+        // console.log(`${this}.initialize()`, this.app, this.el.parentElement);
         this.height = Math.floor(window.innerHeight / 3);
         this.width  = this.el.parentElement.clientWidth;
         this.el.height = this.height;
@@ -21,7 +21,7 @@ export default class BarChart extends mix(Component).with(AnimationLoop) {
 
     setInitialState() {
         this.service.models.forEach(model => {
-
+            // console.log(model.data);
             // not the ideal place for that
             let domItem = this.app.voteForm.items[`${model.data.name}Input`];
             let voteFormRect = this.app.voteForm.el.getBoundingClientRect();
@@ -58,7 +58,7 @@ export default class BarChart extends mix(Component).with(AnimationLoop) {
     }
 
     render() {
-        this.context.clearRect(0, 0, this.options.width, this.options.height);
+        this.context.clearRect(0, 0, this.width, this.height);
 
         this.bars.forEach(bar => {
             bar.render();
