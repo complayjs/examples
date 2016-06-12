@@ -8,7 +8,6 @@ import ApplicationFacade from 'complay/lib/application-facade';
 import ApplicationDomComponent from 'complay/lib/application-dom-component';
 import Plite from 'plite';
 
-
 let root = getGlobalObject();
 let Complay = root.Complay || {};
 

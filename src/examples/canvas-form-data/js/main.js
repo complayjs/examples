@@ -1,5 +1,5 @@
 import ApplicationFacade from 'complay/lib/application-facade';
-import ApplicationDomComponent from 'complay/dist/lib/application-dom-component';
+import ApplicationDomComponent from 'complay/lib/application-dom-component';
 
 // services
 import Votes from './services/votes';
@@ -54,5 +54,5 @@ app.immediate(() => {
 		}
 	});
 }).onWindowLoaded(() => {
-	console.log('onWindowLoaded');
+	console.log('onWindowLoaded', app);
 });
