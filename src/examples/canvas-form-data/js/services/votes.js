@@ -18,7 +18,7 @@ export default class Votes extends Service {
     }
 
     onModelCountChange(data) {
-        // console.log(`${this}.onModelCountChange()`, data.val, data.oldVal);
+        console.log(`${this}.onModelCountChange()`, data.val, data.oldVal);
         this.setPercentage();
     }
 
@@ -38,7 +38,7 @@ export default class Votes extends Service {
         let sum = this.getCountSum();
 
         this.toArray().forEach(model => {
-            // console.log(sum, model.data.count, Math.floor(model.data.count / sum * 100));
+            console.log(sum, model.data.count, Math.floor(model.data.count / sum * 100));
             model.data.percent = sum && Math.floor(model.data.count / sum * 100) || 0;
         });
     }
