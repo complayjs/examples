@@ -14,7 +14,13 @@ export default class BarChart extends mix(Component).with(AnimationLoop) {
 
         this.context = this.el.getContext('2d');
         this.bars = [];
-        
+
+        this.updateCallback = this.update.bind(this);
+        this.renderCallback = this.render.bind(this);
+
+        this.animationUpdateStack.push(this.updateCallback);
+        this.animationRenderStack.push(this.renderCallback);
+
         this.setInitialState();
         this.startCycle();
     }

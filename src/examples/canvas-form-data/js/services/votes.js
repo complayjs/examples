@@ -18,7 +18,7 @@ export default class Votes extends Service {
     }
 
     onModelCountChange(data) {
-        console.log(`${this}.onModelCountChange()`, data.val, data.oldVal);
+        // console.log(`${this}.onModelCountChange()`, data.val, data.oldVal);
         this.setPercentage();
     }
 

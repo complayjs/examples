@@ -23,7 +23,7 @@
     "grunt-sync": "^0.5.2"
   },
   "dependencies": {
-    "complay": "0.0.34",
+    "complay": "0.0.36",
     "plite": "0.0.4"
   }
 }
